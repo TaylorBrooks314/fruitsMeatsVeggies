@@ -1,12 +1,15 @@
 const veggies= require('../models/veggies')
 
 function index(req, res){
-    res.send(veggies)
+    res.render('veggies/Index', {veggies})
 }
 
 function show(req, res){
-    res.send(veggies[req.params.id])
+    res.render('veggies/Show', {veggie:veggies[req.params.id]})
+    // veggies[req.params.id]
 }
+
+// can add filter
 
 module.exports={
     index, 

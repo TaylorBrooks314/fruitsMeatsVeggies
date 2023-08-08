@@ -12,7 +12,7 @@ const meats = [
     {
         name:'pork',
         state: 'rare',
-        readyToEat: true
+        readyToEat: false
     },
     {
         name:'turkey',

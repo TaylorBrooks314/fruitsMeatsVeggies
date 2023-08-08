@@ -1,13 +1,23 @@
 const express =require('express')
 
 const app = express()
-
+const port= 8080;
 // importing our routes
 const fruitRoutes= require('./routes/fruitRoutes');
 const meatRoutes= require('./routes/meatRoutes')
 const veggieRoutes= require('./routes/veggieRoutes')
 
-const port= 8080; 
+// set up view engine///////////
+const jsxEngine = require('jsx-view-engine')
+
+// configure the view engine and look for files ending in jsx
+app.set('view engine', 'jsx')
+
+// create the engine and accepts files ending in jsx
+app.engine('jsx', jsxEngine())
+//
+
+
 
 // connecting our fruit routes to our express app
 app.use('/fruits', fruitRoutes)
